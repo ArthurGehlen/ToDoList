@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+@import "variables.scss";
+
+@mixin task {
+    cursor: $cursor;
+    width: 30rem;
+    height: 2rem;
+    padding: 1.2rem;
+    @include display(flex, none, center, none); // display, justify-content, align-itens, flex-direction
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: .6rem;
+}
+
+@mixin display($flex, $justify_content, $align_itens, $flex_direction) {
+    display: $flex;
+    justify-content: $justify_content;
+    align-items: $align_itens;
+    flex-direction: $flex_direction; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    cursor: $cursor, auto;
+    background-color: $body_bg_color;
+    height: 100vh;
+    @include display(flex, center, center, none); // display, justify-content, align-itens, flex-direction
+    
+    .icon_container {
+        @include display(flex, flex-start, center, none); // display, justify-content, align-itens, flex-direction
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 16rem;
+        color: #fff;
+    }
+
+    main {
+        width: 40rem;
+        height: 25rem;
+        background-color: $main_bg_color;
+        border-radius: 1rem;
+
+        .input_area {
+            height: 5rem;
+            @include display(flex, center, center, none); // display, justify-content, align-itens, flex-direction
+
+            input {
+                cursor: $cursor, auto;
+                width: 20rem;
+                height: 2rem;
+                padding: 1.5rem;
+                font-size: 1.2rem;
+                border-radius: .8rem 0rem 0rem .8rem;
+                border: none;
+                outline: none; 
+            }
+
+            button {
+                cursor: $cursor, auto;
+                width: 9rem;
+                height: 2.7rem;
+                border-radius: 0rem .8rem .8rem 0rem;
+                border: none;
+                background-color: $button_bg_color;
+                font-size: 1rem;
+                color: #fff;
+
+                &:hover, &:active {
+                    background-color: $button_bg_color_hover;
+                }
+            }
+        }
+
+        #task_area {
+            height: 19rem;
+            @include display(flex, none, center, column); // display, justify-content, align-itens, flex-direction
+            gap: .8rem;
+            overflow-y: auto; // Caso o número de tarefas seja maior que o tamanho dessa div
+        }
+    }
+}
+
+// Classe criada para fazer os elementos serem apagados mais facilmente
+.hide {
+    display: none;
+}
+
+// Classes criadas para facilitar a mudança de situação da tarefa (concluida ou não concluida)
+.uncompleted_task {
+    @include task();
+    background-color: $unconpleted_tasks_bg_color;
+}
+
+.completed_task {
+    @include task();
+    text-decoration: line-through;
+    background-color: $completed_tasks_bg_color;
+}

@@ -1,0 +1,45 @@
+@import 'styles';
+
+@media screen and (max-width: 640px) and (min-width: 350px) {    
+    .icon_container {
+        // background-color: red !important;
+        height: 6rem !important;
+
+        img {
+            height: 5rem !important;
+        }
+    }
+    
+    main {
+        width: 20rem !important;
+        height: 30rem !important;
+
+        .input_area {
+            input {
+                padding: .5rem !important;
+                width: 12rem !important;
+                height: 3rem !important;
+                font-size: 1rem !important;
+                border: 1px solid rgba(0, 0, 0, 0.100) !important;
+            }
+
+            button {
+                width: 7rem !important;
+                font-size: .9rem !important;
+                height: 2.9rem !important;
+            }
+        }
+
+        #task_area {
+            height: 22rem !important;
+
+            .uncompleted_task {
+                @include task (19rem !important);
+            }
+        }
+    }
+    
+    .attribution {
+        width: 15rem;
+    }
+}

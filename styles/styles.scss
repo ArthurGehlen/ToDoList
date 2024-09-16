@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
 @import "variables.scss";
 
-@mixin task {
+@mixin task ($width) {
     cursor: $cursor;
-    width: 30rem;
+    width: $width;
     height: 2rem;
-    padding: 1.2rem;
+    padding: 1.4rem;
     @include display(flex, none, center, none); // display, justify-content, align-itens, flex-direction
     color: #fff;
     font-size: 1.2rem;
@@ -23,7 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Mulish', sans-serif;
+    font-family: $font_family;
 }
 
 body {
@@ -65,7 +65,7 @@ body {
             button {
                 cursor: $cursor, auto;
                 width: 9rem;
-                height: 2.7rem;
+                height: 3rem;
                 border-radius: 0rem .8rem .8rem 0rem;
                 border: none;
                 background-color: $button_bg_color;
@@ -94,12 +94,12 @@ body {
 
 // Classes criadas para facilitar a mudança de situação da tarefa (concluida ou não concluida)
 .uncompleted_task {
-    @include task();
+    @include task(30rem);
     background-color: $unconpleted_tasks_bg_color;
 }
 
 .completed_task {
-    @include task();
+    @include task(30rem);
     text-decoration: line-through;
     background-color: $completed_tasks_bg_color;
 }

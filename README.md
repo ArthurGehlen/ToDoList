@@ -35,6 +35,8 @@ Este é um projeto de ToDoList simples, onde você pode adicionar, remover e mar
 
 - Opção de editar uma tarefa
 
+- Adicionar a opção de light-mode e dark-mode
+
 ## Contribuindo
 
 Contribuições são sempre bem-vindas, sinta-se à vontade para abrir issues ou fazer um fork do projeto e enviar pull requests.

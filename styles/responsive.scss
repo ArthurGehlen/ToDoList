@@ -1,8 +1,7 @@
 @import 'styles';
 
-@media screen and (max-width: 640px) and (min-width: 350px) {    
+@media (max-width: 640px) {    
     .icon_container {
-        // background-color: red !important;
         height: 6rem !important;
 
         img {
@@ -34,12 +33,8 @@
             height: 22rem !important;
 
             .uncompleted_task {
-                @include task (19rem !important);
+                @include task(19rem !important);
             }
         }
-    }
-    
-    .attribution {
-        width: 15rem;
     }
 }

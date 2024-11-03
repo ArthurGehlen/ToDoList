@@ -2,11 +2,7 @@
 
 @media (max-width: 640px) {    
     .icon_container {
-        height: 6rem !important;
-
-        img {
-            height: 5rem !important;
-        }
+        display: none !important;
     }
     
     main {

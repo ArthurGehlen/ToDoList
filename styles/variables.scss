@@ -3,7 +3,6 @@
 // Body Styles
 $body_bg_color: #b7b5a7;
 $font_family: "Mulish", sans-serif;
-$cursor: url("/assets/cursor.png"), auto;
 
 // Main Card
 $main_bg_color: #f0f0f0;
@@ -15,7 +14,7 @@ $button_bg_color: #4169e1;
 $button_bg_color_hover: #1e44b7;
 
 @mixin task($width) {
-    cursor: $cursor;
+    cursor: pointer;
     width: $width;
     height: 2rem;
     padding: 1.4rem;

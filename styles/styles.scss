@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
 @import "variables.scss";
 
 // @include display(display, justify-content, align-itens, flex-direction);
@@ -11,13 +10,12 @@
 }
 
 body {
-    cursor: $cursor;
     background-color: $body_bg_color;
     height: 100vh;
-    @include display(flex, center, center, none); 
+    @include display(flex, center, center, row); 
     
     .icon_container {
-        @include display(flex, flex-start, center, none);
+        @include display(flex, flex-start, center, row);
         position: absolute;
         left: 0;
         top: 0;
@@ -26,6 +24,8 @@ body {
     }
 
     main {
+        position: relative;
+        z-index: 1;
         width: 40rem;
         height: 25rem;
         background-color: $main_bg_color;
@@ -36,7 +36,6 @@ body {
             @include display(flex, center, center, none); 
 
             input {
-                cursor: $cursor;
                 width: 20rem;
                 height: 2rem;
                 padding: 1.5rem;
@@ -47,7 +46,6 @@ body {
             }
 
             button {
-                cursor: $cursor;
                 width: 9rem;
                 height: 3rem;
                 border-radius: 0rem .8rem .8rem 0rem;
@@ -84,6 +82,33 @@ body {
 
 .completed_task {
     @include task(29rem);
-    text-decoration: line-through;
     background-color: $completed_tasks_bg_color;
+    position: relative;
+    animation: task_active .2s ease forwards;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 1.4rem;
+        top: 50%;
+        height: .1rem;
+        width: 0%;
+        background-color: #fff;
+        animation: task_completed 2s ease-out;
+    }
+}
+
+@keyframes task_active {
+    50% {
+        transform: scale(.9, .9);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes task_completed {
+    to {
+        width: calc(100% - 2.8rem);
+    }
 }

@@ -23,6 +23,40 @@ body {
         color: #fff;
     }
 
+    .theme_switcher {
+        position: absolute;
+        top: 0;
+        width: 40rem;
+        height: 8rem;
+        @include display(flex, center, center, row);
+
+        button {
+            position: relative;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 1rem;
+            border: transparent;
+
+            input {
+                height: inherit;
+                width: inherit;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .circle {
+                transform: translate(-50%, -50%);
+                position: absolute;
+                left: 20%;
+                top: 50%;
+                width: 1.5rem;
+                height: 1.5rem;
+                background-color: $circle_bg_color;
+                border-radius: 50%;
+            }
+        }
+    }
+
     main {
         position: relative;
         z-index: 1;

@@ -13,6 +13,9 @@ $completed_tasks_bg_color: #6ed718;
 $button_bg_color: #4169e1;
 $button_bg_color_hover: #1e44b7;
 
+// Theme Switcher
+$circle_bg_color: hsla(0, 0%, 40%, 0.8); 
+
 @mixin task($width) {
     cursor: pointer;
     width: $width;

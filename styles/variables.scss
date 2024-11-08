@@ -1,17 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
 
+// LM -> Light Mode           
+// DM -> Dark Mode
+
 // Body Styles
-$body_bg_color: #b7b5a7;
+$body_bg_color_lm: hsl(0, 0%, 95%);
+$body_bg_color_dm: hsl(240, 10%, 15%);
 $font_family: "Mulish", sans-serif;
 
 // Main Card
-$main_bg_color: #f0f0f0;
+$main_bg_color_lm: hsl(0, 0%, 92%);
+$main_bg_color_dm: hsl(240, 10%, 25%);
+
+// Tasks
 $unconpleted_tasks_bg_color: #d71818;
 $completed_tasks_bg_color: #6ed718;
 
+// Input Styles
+$input_bg_color_lm: hsl(0, 0%, 85%);
+$input_bg_color_dm: hsl(240, 10%, 40%);
+$input_color_lm: hsl(0, 0%, 20%); 
+$input_color_dm: hsl(0, 0%, 95%);
+
 // Button Styles
-$button_bg_color: #4169e1;
-$button_bg_color_hover: #1e44b7;
+$button_bg_color_lm: hsl(210, 100%, 50%);
+$button_bg_color_hover_lm: hsl(210, 100%, 40%);
+$button_bg_color_dm: hsl(260, 50%, 40%);
+$button_bg_color_hover_dm: hsl(260, 50%, 30%);
 
 // Theme Switcher
 $circle_bg_color: hsla(0, 0%, 40%, 0.8); 
@@ -27,9 +42,9 @@ $circle_bg_color: hsla(0, 0%, 40%, 0.8);
     border-radius: .6rem;
 }
 
-@mixin display($flex, $justify_content, $align_itens, $flex_direction) {
+@mixin display($flex, $justify_content, $align_items, $flex_direction) {
     display: $flex;
     justify-content: $justify_content;
-    align-items: $align_itens;
+    align-items: $align_items;
     flex-direction: $flex_direction; 
 }

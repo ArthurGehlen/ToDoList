@@ -1,6 +1,8 @@
 const input_task = document.getElementById('input_task');
 const add_task_btn = document.getElementById('input_task_btn');
 const task_area = document.getElementById('task_area');
+const switch_theme_btn = document.getElementById("switch_theme_btn");
+const body = document.body;
 
 function add_task() {
     const input_task_value = input_task.value;
@@ -40,3 +42,7 @@ input_task.addEventListener('keypress', (event) => {
         add_task();
     }
 })
+
+switch_theme_btn.addEventListener("click", () => {
+    body.classList.toggle("dark_mode");
+});

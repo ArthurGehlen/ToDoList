@@ -1,11 +1,12 @@
 @import 'styles';
 
 @media (max-width: 640px) {    
-    .icon_container {
-        display: none !important;
+    .upper_part {
+        margin-top: 1rem;
     }
-    
+
     main {
+        margin-top: 5rem;
         width: 20rem !important;
         height: 30rem !important;
 
@@ -15,7 +16,6 @@
                 width: 12rem !important;
                 height: 3rem !important;
                 font-size: 1rem !important;
-                border: 1px solid rgba(0, 0, 0, 0.100) !important;
             }
 
             button {

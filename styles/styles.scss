@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-// @include display(display, justify-content, align-itens, flex-direction);
+// Mixin de display -> @include display(display, justify-content, align-itens, flex-direction);
 
 * {
     margin: 0;
@@ -10,17 +10,62 @@
 }
 
 body {
-    background-color: $body_bg_color;
+    background-color: $body_bg_color_lm;
     height: 100vh;
-    @include display(flex, center, center, row); 
-    
-    .icon_container {
-        @include display(flex, flex-start, center, row);
+    @include display(flex, center, center, column);
+
+    .upper_part {
         position: absolute;
-        left: 0;
         top: 0;
-        width: 16rem;
-        color: #fff;
+        width: 100%;
+        height: 15%;
+        @include display(flex, space-around, center, row);
+
+        .icon_container {
+            @include display(flex, flex-start, center, row);
+            width: 50%;
+            height: 100%;
+            padding: .8rem;
+            color: hsl(0, 0%, 0%);
+        }
+
+        .switch_theme {
+            @include display(flex, center, center, row);
+            height: 100%;
+            width: 50%;
+
+            button {
+                position: relative;
+                width: 6rem;
+                height: 2rem;
+                border: none;
+                border-radius: 1rem;
+                background-color: hsla(0, 0, 50%, 0.8);
+
+                .circle {
+                    transform: translate(0%, -50%);
+                    position: absolute;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    background-color: hsl(0, 0, 100%);
+                    left: 5%;
+                    top: 50%;
+                    transition: left .4s ease;
+                }
+
+                input {
+                    cursor: pointer;
+                    height: inherit;
+                    width: inherit;
+                    opacity: 0;
+
+                    &:checked+.circle {
+                        left: 70%;
+                    }
+                }
+            }
+        }
     }
 
     .theme_switcher {
@@ -58,45 +103,47 @@ body {
     }
 
     main {
-        position: relative;
-        z-index: 1;
         width: 40rem;
         height: 25rem;
-        background-color: $main_bg_color;
+        background-color: $main_bg_color_lm;
         border-radius: 1rem;
 
         .input_area {
             height: 5rem;
-            @include display(flex, center, center, none); 
+            @include display(flex, center, center, none);
 
             input {
+                background-color: $input_bg_color_lm;
+                color: $input_color_lm;
                 width: 20rem;
                 height: 2rem;
                 padding: 1.5rem;
                 font-size: 1.2rem;
                 border-radius: .8rem 0rem 0rem .8rem;
                 border: none;
-                outline: none; 
+                outline: none;
             }
 
             button {
+                cursor: pointer;
                 width: 9rem;
                 height: 3rem;
                 border-radius: 0rem .8rem .8rem 0rem;
                 border: none;
-                background-color: $button_bg_color;
+                background-color: $button_bg_color_lm;
                 font-size: 1rem;
                 color: #fff;
 
-                &:hover, &:active {
-                    background-color: $button_bg_color_hover;
+                &:hover,
+                &:active {
+                    background-color: $button_bg_color_hover_lm;
                 }
             }
         }
 
         #task_area {
             height: 19rem;
-            @include display(flex, none, center, column); 
+            @include display(flex, none, center, column);
             gap: .8rem;
             overflow-y: auto; // Caso o número de tarefas seja maior que o tamanho dessa div, cria uma Scrollbar
         }
@@ -120,6 +167,7 @@ body {
     position: relative;
     animation: task_active .2s ease forwards;
 
+    // Cria o efeito de corte no texto quando uma task é completada
     &:before {
         content: "";
         position: absolute;
@@ -132,10 +180,12 @@ body {
     }
 }
 
+// Animações para o efeito de corte no texto quando uma task é completada
 @keyframes task_active {
     50% {
         transform: scale(.9, .9);
     }
+
     100% {
         transform: scale(1, 1);
     }

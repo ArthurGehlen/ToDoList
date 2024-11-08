@@ -1,0 +1,24 @@
+@import 'variables';
+
+.dark_mode {
+    background-color: $body_bg_color_dm !important;
+
+    .icon_container {
+        color: hsl(0, 0, 100%) !important;
+    }
+
+    main {
+        background-color: $main_bg_color_dm !important;
+
+        .input_area {
+            input {
+                background-color: $input_bg_color_dm !important;
+                color: $input_color_dm !important;
+            }
+
+            button {
+                background-color: $button_bg_color_dm !important;
+            }
+        }
+    }
+}

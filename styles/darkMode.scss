@@ -7,6 +7,10 @@
         color: hsl(0, 0, 100%) !important;
     }
 
+    .switch_theme {
+        color: hsl(0, 0, 100%) !important;
+    }
+
     main {
         background-color: $main_bg_color_dm !important;
 
@@ -18,6 +22,10 @@
 
             button {
                 background-color: $button_bg_color_dm !important;
+                
+                &:hover {
+                    background-color: $button_bg_color_hover_dm !important;
+                }
             }
         }
     }

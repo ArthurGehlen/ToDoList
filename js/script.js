@@ -2,11 +2,12 @@ const input_task = document.getElementById('input_task');
 const add_task_btn = document.getElementById('input_task_btn');
 const task_area = document.getElementById('task_area');
 const switch_theme_btn = document.getElementById("switch_theme_btn");
+const switch_theme_p = document.getElementById("switch_theme_p");
 const body = document.body;
 
 function add_task() {
     const input_task_value = input_task.value;
-    
+
     if (input_task_value != "") {
         let task = document.createElement("div");
         let task_title = document.createElement("p");
@@ -45,4 +46,6 @@ input_task.addEventListener('keypress', (event) => {
 
 switch_theme_btn.addEventListener("click", () => {
     body.classList.toggle("dark_mode");
+
+    body.classList.contains("dark_mode") ? switch_theme_p.textContent = "Light Mode" : switch_theme_p.textContent = "Dark Mode";
 });

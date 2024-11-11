@@ -1,12 +1,7 @@
 @import 'styles';
 
 @media (max-width: 640px) {    
-    .upper_part {
-        margin-top: 1rem;
-    }
-
     main {
-        margin-top: 5rem;
         width: 20rem !important;
         height: 30rem !important;
 
@@ -32,5 +27,9 @@
                 @include task(19rem !important);
             }
         }
+    }
+
+    footer {
+        width: 20rem !important;
     }
 }
